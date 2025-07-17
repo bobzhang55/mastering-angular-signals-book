@@ -43,4 +43,7 @@ export class LinkedSignalComponent {
   changePage(page: number) {
     this.resultsPage.set(page);
   }
+
+  /// debuging
+  searchTermVal = this.searchTerm()
 }
