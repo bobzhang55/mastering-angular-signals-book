@@ -43,7 +43,13 @@ export class LinkedSignalComponent {
   changePage(page: number) {
     this.resultsPage.set(page);
   }
+  nextPage() {
+    this.resultsPage.update((page) => page + 1);
+  }
+  prevPage() {
+    this.resultsPage.update((page) => page - 1);
+  }
 
   /// debuging
-  searchTermVal = this.searchTerm()
+  searchTermVal = this.searchTerm();
 }

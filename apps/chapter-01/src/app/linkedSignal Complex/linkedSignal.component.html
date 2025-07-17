@@ -28,11 +28,11 @@
     <div>
       <div class="flex justify-end">
         {{ resultsPage() * resultsLimit() }} to
-        {{ resultsLimit() + resultsLimit() * resultsPage() }}
+        {{ resultsPage() * resultsLimit() + resultsLimit() }}
       </div>
       <ul>
         @for (person of filtered() | slice: resultsPage() * resultsLimit() :
-        (resultsLimit() + resultsLimit() * resultsPage()); track $index) {
+        (resultsPage() * resultsLimit() + resultsLimit()); track $index) {
         <li>{{ person }}</li>
         }
       </ul>

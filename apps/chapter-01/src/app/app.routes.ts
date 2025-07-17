@@ -38,12 +38,23 @@ export const appRoutes: Route[] = [
   {
     path: 'linkedSignal',
     loadComponent: () => {
-      return import('./linkedSignal/linkedSignal.component').then(
+      return import('./linkedSignal Complex/linkedSignal.component').then(
         (m) => m.LinkedSignalComponent
       );
     },
     data: {
       name: 'Linked Signal',
+    },
+  },
+  {
+    path: 'userProfile',
+    loadComponent: () => {
+      return import('./userProfile/userProfile.component').then(
+        (m) => m.UserProfileComponent
+      );
+    },
+    data: {
+      name: 'User Profile',
     },
   },
 ];
