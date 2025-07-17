@@ -15,8 +15,8 @@
     <div>
       <ul>
         @for (person of filtered() | slice: resultsPage() * resultsLimit() :
-        (resultsLimit() + resultsLimit() * resultsPage()); track $index) {
-        <li>{{ person }}</li>
+              (resultsPage() * resultsLimit() + resultsLimit()); track $index) {
+          <li>{{ person }}</li>
         }
       </ul>
     </div>
