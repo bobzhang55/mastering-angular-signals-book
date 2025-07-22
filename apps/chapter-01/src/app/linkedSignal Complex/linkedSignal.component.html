@@ -5,24 +5,15 @@
         <div class="label">
           <span class="label-text">Search</span>
         </div>
-        <input
-          [(ngModel)]="searchTerm"
-          placeholder="search..."
-          class="input input-bordered w-full max-w-xs"
-        />
+        <input [(ngModel)]="searchTerm" placeholder="search..." class="input input-bordered w-full max-w-xs" />
       </label>
 
       <label class="form-control w-full max-w-xs">
         <div class="label">
           <span class="label-text">Results limit</span>
         </div>
-        <input
-          [(ngModel)]="resultsLimit"
-          type="number"
-          min="2"
-          max="{{ people().length }}"
-          class="input input-bordered w-full max-w-xs"
-        />
+        <input [(ngModel)]="resultsLimit" type="number" min="2" max="{{ people().length }}"
+          class="input input-bordered w-full max-w-xs" />
       </label>
     </h2>
     <div>
@@ -40,11 +31,8 @@
     <div class="card-actions justify-end">
       <div class="join">
         @for (item of pages(); track $index) {
-        <button
-          class="join-item btn"
-          [ngClass]="{ 'btn-active': resultsPage() === $index }"
-          (click)="changePage($index)"
-        >
+        <button class="join-item btn" [ngClass]="{ 'btn-active': resultsPage() === $index }"
+          (click)="changePage($index)">
           {{ $index + 1 }}
         </button>
         }

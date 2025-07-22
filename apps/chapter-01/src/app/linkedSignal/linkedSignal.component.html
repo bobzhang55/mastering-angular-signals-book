@@ -5,29 +5,22 @@
         <div class="label">
           <span class="label-text">Search</span>
         </div>
-        <input
-          [(ngModel)]="searchTerm"
-          placeholder="search..."
-          class="input input-bordered w-full max-w-xs"
-        />
+        <input [(ngModel)]="searchTerm" placeholder="search..." class="input input-bordered w-full max-w-xs" />
       </label>
     </h2>
     <div>
       <ul>
         @for (person of filtered() | slice: resultsPage() * resultsLimit() :
-              (resultsPage() * resultsLimit() + resultsLimit()); track $index) {
-          <li>{{ person }}</li>
+        (resultsPage() * resultsLimit() + resultsLimit()); track $index) {
+        <li>{{ person }}</li>
         }
       </ul>
     </div>
     <div class="card-actions justify-end">
       <div class="join">
         @for (item of pages(); track $index) {
-        <button
-          class="join-item btn"
-          [ngClass]="{ 'btn-active': resultsPage() === $index }"
-          (click)="changePage($index)"
-        >
+        <button class="join-item btn" [ngClass]="{ 'btn-active': resultsPage() === $index }"
+          (click)="changePage($index)">
           {{ $index + 1 }}
         </button>
         }
