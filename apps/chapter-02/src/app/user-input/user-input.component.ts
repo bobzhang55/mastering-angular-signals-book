@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 export class UserInputComponent {
   searchQuery = signal('');
 
-  searchQueryDown(){
+  searchQueryDown() {
     console.log(this.searchQuery());
   }
 }
