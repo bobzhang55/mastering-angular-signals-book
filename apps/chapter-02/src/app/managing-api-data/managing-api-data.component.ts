@@ -20,23 +20,23 @@ type User = {
     <div class="card-body flex-col gap-4 min-h-[360px]">
       <h2 class="card-title">Random User</h2>
       @if(loading()) {
-      <div class="flex flex-1 justify-between w-full">
-        <span class="loading loading-spinner loading-sm mx-auto"></span>
-      </div>
+        <div class="flex flex-1 justify-between w-full">
+          <span class="loading loading-spinner loading-sm mx-auto"></span>
+        </div>
       } @else if(error()) {
-      {{ error() }}
+        {{ error() }}
       } @else if(user()) {
-      <figure>
-        <img
-          src="{{ user()?.picture?.large }}"
-          alt="avatar"
-          class="w-32 h-32 mask-square"
-        />
-      </figure>
-      <h2 class="card-title">
-        {{ user()?.name?.first }} {{ user()?.name?.last }}
-      </h2>
-      <p>{{ user()?.email }}</p>
+        <figure>
+          <img
+            src="{{ user()?.picture?.large }}"
+            alt="avatar"
+            class="w-32 h-32 mask-square"
+          />
+        </figure>
+        <h2 class="card-title">
+          {{ user()?.name?.first }} {{ user()?.name?.last }}
+        </h2>
+        <p>{{ user()?.email }}</p>
       }
       <div class="card-actions justify-end">
         <button

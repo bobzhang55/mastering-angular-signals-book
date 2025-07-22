@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
         [(ngModel)]="searchQuery"
         placeholder="Search..."
         class="input input-bordered"
+        onKeyup.enter="searchQuery()"
       />
       <p class="menu">You searched for: {{ searchQuery() }}</p>
     </div>
@@ -19,4 +20,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class UserInputComponent {
   searchQuery = signal('');
+
+  searchQueryDown(){
+    console.log(this.searchQuery());
+  }
 }
